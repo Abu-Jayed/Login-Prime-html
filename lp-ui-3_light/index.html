@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox with Checkmark</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-checkbox {
+            position: relative;
+            cursor: pointer;
+            font-size: 16px;
+            padding-left: 30px;
+        }
+
+        .custom-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .custom-checkbox .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #ddd;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .custom-checkbox .checkmark::after {
+            content: '';
+            display: none;
+            width: 10px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+            background-color: #4caf50;
+            border-color: #4caf50;
+        }
+
+        .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="checkbox-container">
+        <label class="custom-checkbox">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            Click Me
+        </label>
+    </div>
+</body>
+</html>

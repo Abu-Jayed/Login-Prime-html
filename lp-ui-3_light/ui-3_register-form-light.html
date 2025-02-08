@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f5f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .form-container {
+        background-color: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 400px;
+      }
+
+      .form-container h2 {
+        margin-bottom: 20px;
+        font-size: 28px;
+        font-weight: 600;
+        color: #101828;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group input::placeholder {
+        color: #98a2b3;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #344054;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #d0d5dd;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #333;
+        box-sizing: border-box;
+      }
+
+      .form-group input:focus {
+        border: 2px solid #d0d5dd;
+        border-color: #d1e9ff;
+        outline: none;
+      }
+
+      .form-group .password-toggle {
+        position: relative;
+      }
+
+      .form-group .password-toggle input {
+        padding-right: 40px;
+      }
+
+      .form-group .password-toggle .toggle-button {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #007bff;
+      }
+
+      .terms {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      .terms input {
+        margin-right: 10px;
+      }
+
+      .terms a {
+        color: black;
+      }
+
+      .terms a:hover {
+        text-decoration: underline;
+      }
+
+      .button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background-color: #0056b3;
+      }
+
+      .google-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5f7fa;
+        color: #333;
+        padding: 10px;
+        border: 1px solid #d4dce1;
+        border-radius: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+
+      .google-button img {
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      .google-button:hover {
+        background-color: #e2e6ea;
+      }
+
+      .login {
+        margin-top: 20px;
+        text-align: center;
+        color: #98a2b3;
+      }
+
+      .login a {
+        color: #1570ef;
+        text-decoration: none;
+      }
+
+      .login a:hover {
+        text-decoration: underline;
+      }
+
+      /* checkbox container */
+      .checkbox-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      /* Hide the browser's default checkbox */
+      .checkbox-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 24px;
+        width: 24px;
+        background-color: #eee;
+      }
+
+      /* On mouse-over, add a grey background color */
+      .checkbox-container:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+
+      /* When the checkbox is checked, add a blue background */
+      .checkbox-container input:checked ~ .checkmark {
+        background-color: #2196f3;
+      }
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the checkmark when checked */
+      .checkbox-container input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      /* Style the checkmark/indicator */
+      .checkbox-container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Create an account</h2>
+      <form>
+        <div class="form-group">
+          <label for="firstname">Firstname</label>
+          <input type="text" id="firstname" placeholder="Your firstname" />
+        </div>
+        <div class="form-group">
+          <label for="lastname">Lastname</label>
+          <input type="text" id="lastname" placeholder="Your lastname" />
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="@username" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="youremail@gmail.com" />
+        </div>
+        <div class="form-group password-toggle">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+          />
+        </div>
+        <div class="form-group password-toggle">
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Enter your password"
+          />
+        </div>
+        <div class="terms">
+          <label class="checkbox-container">
+            <input type="checkbox" checked="checked" />
+            <span class="checkmark"></span>
+            <span class="terms">I agree to the &nbsp; <a href="#"> terms & policy</a></span>
+          </label>
+          <!-- <input type="checkbox" id="terms">
+                <label for="terms">I agree to the <a href="#">terms & policy</a></label> -->
+        </div>
+        <button type="submit" class="button">Create account</button>
+        <div class="google-button">
+          <img src="./Google - Original.png" alt="Google Logo" />
+          Continue with Google
+        </div>
+        <div class="google-button">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Google Logo" />
+          Continue with Facebook
+        </div>
+      </form>
+      <div class="login">Already have an account? <a href="./ui-3_login-form-light.html">Log In</a></div>
+    </div>
+  </body>
+</html>

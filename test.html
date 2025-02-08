@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Login Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f9f9f9;
+      }
+
+      .login-container {
+        display: flex;
+        width: 90%;
+        max-width: 1200px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      /* Image Section */
+      .image-section {
+        flex: 1;
+        /* background: #000; */
+      }
+
+      .image-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Form Section */
+      .form-section {
+        flex: 1;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .social-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .google {
+        background-color: #f5f5f5;
+        color: #333;
+      }
+
+      .facebook {
+        background-color: #3b5998;
+        color: #fff;
+      }
+
+      .divider {
+        text-align: center;
+        color: #999;
+        margin: 20px 0;
+      }
+
+      form label {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+        display: block;
+        color: #555;
+      }
+
+      form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 0.9rem;
+      }
+
+      .forgot-password {
+        color: #007bff;
+        font-size: 0.8rem;
+        text-decoration: none;
+      }
+
+      .submit-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .submit-button:hover {
+        background-color: #444;
+      }
+
+      form p {
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      form a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      .remember-me-checkbox {
+        width: 12%;
+        height: 25px;
+        padding: 0px;
+        margin-bottom: 0px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .login-container {
+          flex-direction: column-reverse;
+          align-items: center;
+        }
+
+        .image-section img {
+          width: 356px;
+          height: 256px;
+          border-radius: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <section class="form-section">
+        <div class="form-container">
+          <h1>Welcome Back 👋</h1>
+          <p>
+            Today is a new day. It's your day. You shape it.<br />Sign in to
+            start managing your projects.
+          </p>
+          <button class="social-button google">Sign in with Google</button>
+          <button class="social-button facebook">Sign in with Facebook</button>
+          <div class="divider">Or</div>
+          <form>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Example@email.com"
+              required
+            />
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="At least 8 characters"
+              required
+            />
+            <div style="display: flex; justify-content: space-between;align-items: center; margin-bottom: 8px;">
+              <div class="" style="width: 100%; align-items: center; display: flex; gap: 8px;" >
+                <input class="remember-me-checkbox" type="checkbox" />
+                <span>Remember me</span>
+              </div>
+              <div style="width: 100%;">
+                <a href="#" class="forgot-password">Forgot Password?</a>
+              </div>
+            </div>
+            <button type="submit" class="submit-button">Sign in</button>
+          </form>
+          <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+      </section>
+      <section class="image-section">
+        <img src="./src/Login Art.png" alt="Decorative Flowers" />
+      </section>
+    </div>
+  </body>
+</html>
